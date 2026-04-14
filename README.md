@@ -378,6 +378,7 @@ The BurnoutExtreme application can be extended with the following features:
   </table>
 </center>
 
+
 ## 🤝Contribution
 
 Please refer to the [CONTRIBUTING.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/CONTRIBUTING.md) file for instructions on how to contribute to our repository.
