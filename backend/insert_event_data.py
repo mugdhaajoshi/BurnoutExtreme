@@ -5,7 +5,6 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["test"]  # Replace with your database name
 collection = db["events"]  # Replace with your collection name
 
-
 cards = [
     {
         "title": "Yoga",

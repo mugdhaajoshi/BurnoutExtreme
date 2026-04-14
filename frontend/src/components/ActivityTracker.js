@@ -15,7 +15,7 @@ const ActivityTracker = () => {
             .then(data => setActivityData(data))
             .catch(err => console.error(err));
     }, []);
-
+    
     const handleTrackActivity = async () => {
         const token = localStorage.getItem('jwtToken'); // Retrieve the token from localStorage
         const response = await fetch('/trackActivity', {

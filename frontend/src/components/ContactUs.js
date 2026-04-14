@@ -29,7 +29,7 @@ const ContactUs = props => {
     // Open the default email client
     window.location.href = mailtoLink
   }
-
+  
   return (
     <div>
       <Container
