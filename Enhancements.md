@@ -1,5 +1,6 @@
 # Added Features in the Burnout v4.0 (What's new?)
 
+
 ### <li> Added interactive map functionality for event locations.
 
 ### <li> Enhanced tracking of physical activities, including distance and duration.
