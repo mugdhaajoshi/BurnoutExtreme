@@ -10,7 +10,6 @@ https://github.com/Software-Engineering-2024-Group/BurnoutExtreme.git
 
 For each items, score yourself zero (none), one (a litte), two (somewhat), three (a lot).
 
-**Total Score: 0**  <!-- Update this score based on your self-assessment -->
 
 | Criteria                                                                                   | Self-Assessment Score | Supporting Links                   |
 |:-------------------------------------------------------------------------------------------|:----------------------|:-----------------------------------|
