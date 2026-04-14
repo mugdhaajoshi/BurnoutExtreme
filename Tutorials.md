@@ -24,6 +24,7 @@ https://github.com/user-attachments/assets/676fbcd7-130c-4b74-a87d-79f9cf931166
 ### User Profile Page
 https://github.com/aditikilledar/dollar_bot_SE23/assets/60314222/1bfdad50-42bc-4492-aca5-87ed1b2ef21f
 
+
 ### FAQ Page
 
 https://github.com/user-attachments/assets/fd946537-7b1d-41c3-8bea-eaf29ebaa798
