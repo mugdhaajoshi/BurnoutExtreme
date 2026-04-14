@@ -76,10 +76,12 @@ Before troubleshooting, ensure:
 ### Issue 6: API endpoints returning errors
 
 **Possible Causes:**
+
 1. Endpoints or routes are incorrectly defined.
 2. Backend can't connect to MongoDB.
 
 **Solution:** 
+
 1. Verify route definitions and ensure methods (GET, POST, etc.) are correct.
 2. Check the backend's MongoDB connection and settings.
 
