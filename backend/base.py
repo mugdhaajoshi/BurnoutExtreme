@@ -514,9 +514,7 @@ def profileUpdate():  # pragma: no cover
     height = request.json.get('height', None)
     sex = request.json.get('sex', None)
     activityLevel = request.json.get('activityLevel', None)
-    bmi = (0.453*float(weight))/((0.3048*float(height))**2)
-    bmi = round(bmi, 2)
-    tdee = calculate_tdee(height, weight, age, sex, activityLevel)
+
     new_document = {
         "first_name": first_name,
         "last_name": last_name,
@@ -524,12 +522,21 @@ def profileUpdate():  # pragma: no cover
         "weight": weight,
         "height": height,
         "sex": sex,
-        "bmi": bmi,
-        "target_calories": tdee,
     }
-    query = {
-        "email": current_user,
-    }
+
+    # Only calculate BMI and TDEE if all required fields are present
+    try:
+        if weight and height:
+            bmi = (0.453 * float(weight)) / ((0.3048 * float(height)) ** 2)
+            new_document["bmi"] = round(bmi, 2)
+        if weight and height and age and sex and activityLevel:
+            tdee = calculate_tdee(height, weight, age, sex, activityLevel)
+            if tdee:
+                new_document["target_calories"] = tdee
+    except (ValueError, TypeError):
+        pass  # Don't crash if values are malformed
+
+    query = {"email": current_user}
     try:
         mongo.user.update_one(query, {"$set": new_document}, upsert=True)
         response = jsonify({"msg": "update successful"})
@@ -537,6 +544,37 @@ def profileUpdate():  # pragma: no cover
         response = jsonify({"msg": "update failed"})
 
     return response
+    # current_user = get_jwt_identity()
+    # first_name = request.json.get('firstName', None)
+    # last_name = request.json.get('lastName', None)
+    # age = request.json.get('age', None)
+    # weight = request.json.get('weight', None)
+    # height = request.json.get('height', None)
+    # sex = request.json.get('sex', None)
+    # activityLevel = request.json.get('activityLevel', None)
+    # bmi = (0.453*float(weight))/((0.3048*float(height))**2)
+    # bmi = round(bmi, 2)
+    # tdee = calculate_tdee(height, weight, age, sex, activityLevel)
+    # new_document = {
+    #     "first_name": first_name,
+    #     "last_name": last_name,
+    #     "age": age,
+    #     "weight": weight,
+    #     "height": height,
+    #     "sex": sex,
+    #     "bmi": bmi,
+    #     "target_calories": tdee,
+    # }
+    # query = {
+    #     "email": current_user,
+    # }
+    # try:
+    #     mongo.user.update_one(query, {"$set": new_document}, upsert=True)
+    #     response = jsonify({"msg": "update successful"})
+    # except Exception as e:
+    #     response = jsonify({"msg": "update failed"})
+
+    # return response
 
 
 @api.route('/goalsUpdate', methods=["POST"])

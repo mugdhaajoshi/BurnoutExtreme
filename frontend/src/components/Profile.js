@@ -130,6 +130,7 @@ function Profile(props) {
       setProfileImage(URL.createObjectURL(file));
     }
   };
+
   const activityOptions = { Minimal: "Sedentary(Office Job)", Light: "Light exercise (1-2 days/week)", Moderate: "Moderate exercise (3-5 days/week)", Heavy: "Heavy exercise (6-7 days/week)", Athlete: "Athlete (2x per day)" }
   const sexes = ["Male", "Female"]
   useEffect(() => {

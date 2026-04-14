@@ -2,7 +2,10 @@ import apps
 import sys
 import os
 
+# Ensure parent directory is on sys.path before importing apps
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import apps
+
 app = apps.App()
 mongo = app.mongo
 
