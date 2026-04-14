@@ -3,6 +3,7 @@ from flask_pymongo import PyMongo
 from flask_mail import Mail
 
 
+
 class App:
     def __init__(self):
         self.app = Flask(__name__)
@@ -16,3 +17,5 @@ class App:
         self.app.config['MAIL_USERNAME'] = "bogusdummy123@gmail.com"
         self.app.config['MAIL_PASSWORD'] = "helloworld123!"
         self.mail = Mail(self.app)
+
+
