@@ -4,6 +4,7 @@
 The following are a set of guidelines for contributing to BurnOut. We are open to suggestions to enhance our project so feel free to propose changes to this document in a pull request.
 
 
+
 ### Table of contents
 [Code of Conduct](#code-of-conduct)
 
