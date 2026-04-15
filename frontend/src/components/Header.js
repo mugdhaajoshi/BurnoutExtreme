@@ -21,6 +21,7 @@
     Events: "/events",
     "My Meals": "/meals",
     "My Workouts": "/workouts",
+    "Friends Leaderboard": "/friends-leaderboard",
     FAQ: "/faq",
     "Contact Us": "/contactus",
   };
